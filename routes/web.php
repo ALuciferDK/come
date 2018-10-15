@@ -34,4 +34,4 @@ Route::get('/message','Admin\MessageController@message');
 
 Route::any('mail/send','Admin\MailController@send');
 Route::get('user/getIP','Admin\UserController@getIP');
-Route::get('user/getAddress','Admin\UserController@getAddress');
+Route::get('user/getAddress','Admin\UserController@getAddress');//ssssssssssssssssssssssssss
