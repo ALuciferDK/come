@@ -8,7 +8,7 @@
 
 namespace App\Services;
 
-use App\Models\UserModel;
+use App\Models\FirstModel;
 
 class FirstService
 {
@@ -23,9 +23,14 @@ class FirstService
      * */
     public function __construct()
     {
-        $this->goodsModel = new UserModel('goods');//实例化model类,指定goods表。
-        $this->goodsTypeModel = new UserModel('goods_type');//实例化model类,指定goods_type表。
+        $this->goodsModel = new FirstModel('goods');//实例化model类,指定goods表。
+        $this->goodsTypeModel = new FirstModel('goods_type');//实例化model类,指定goods_type表。
     }
 
+    public function getAllGoodsType()
+    {
+        $data = $this->goodsTypeModel->getAll();
+        return $data;
+    }
 
 }
