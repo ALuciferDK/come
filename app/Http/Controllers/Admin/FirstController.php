@@ -9,13 +9,19 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Services\FirstService;
 class FirstController extends Controller
 {
     public function first()
     {
-
-        return view('first.details');
+        $FirstService = new FirstService();
+        $data = $FirstService->getAllGoodsType();
+        if($data)
+        {
+            $data = json_decode($data,true);
+        }
+        //dd($data);
+        return view('first.details',['data'=>$data]);
     }
 }
 ?>

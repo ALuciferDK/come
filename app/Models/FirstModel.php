@@ -55,9 +55,15 @@ class FirstModel extends  Model
     /*
      *  查询单条
      * */
-    public function getAll($where)
+    public function getAllWhere($where)
     {
         $data = DB::table($this->table)->where($where)->get();
+        return $data;
+    }
+
+    public function getAll()
+    {
+        $data = DB::table($this->table)->get();
         return $data;
     }
 }
