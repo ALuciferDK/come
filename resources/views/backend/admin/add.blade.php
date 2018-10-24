@@ -49,8 +49,7 @@
             </div>
         </div>
     </form>
-
-    @stop
+@stop
 @section('js')
 <script type="text/javascript" src="{{URL::asset('js/jquery-1.7.2.min.js')}}"></script>
 <script>

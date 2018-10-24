@@ -56,9 +56,9 @@
                         @foreach(Session::get('button') as $but => $b_value)
                             <td>
                                 @if($b_value['url'] == 'Power/del')
-                                    <a href="Menu/del?m_id={{$value['menu_id']}}" class="label label-success">删除</a>
+                                    <a href="/Power/del?m_id={{$value['menu_id']}}" class="label label-success">删除</a>
                                 @elseif($b_value['url'] == 'Power/upd')
-                                    <a href="Menu/upd?m_id={{$value['menu_id']}}" class="label label-warning">修改</a>
+                                    <a href="/Power/upd?m_id={{$value['menu_id']}}" class="label label-warning">修改</a>
                                 @else
 
                                 @endif

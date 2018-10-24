@@ -60,6 +60,11 @@ class HomeService
         $info = 'menu_id';
         $data = $this->menuModel->getWhere($where,$info);
         $data = json_decode($data,true);
+        return $data;
+    }
+
+    public function getMenuOver($data)
+    {
         $data = $this->createTree($data);
         $data = $this->createMenus($data);
         return $data;
@@ -120,13 +125,20 @@ class HomeService
 
         $menu = $this->getMenu($menu_id);//通过获取的菜单id得到菜单
 
+        $menuData = $this->getMenuOver($menu);
+
         $button = $this->getButton($button_id);//获取按钮权限
 
-        $url = array_column($menu,'url');
+        $button_url = array_column($button,'url');
+
+        $menu_url = array_column($menu,'url');
+
+        $url = array_merge($button_url,$menu_url);
         //dd($button);
         //dd($menu);
         Session::put('button',$button);
-        Session::put('menu',$menu);
+        Session::put('menu',$menuData);
+
         return  in_array($path,$url)?true:false;
     }
 }
