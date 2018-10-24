@@ -38,25 +38,28 @@ Route::get('user/getAddress','Frontend\UserController@getAddress');//sssssssssss
 
 Route::any('backend/login','Backend\LoginController@login');
 Route::any('backend/loginOut','Backend\LoginController@loginOut');
+
 Route::group(['middleware' => ['power']], function () {
     Route::get('backend/home', 'Backend\HomeController@home');
     Route::any('Admin/add','Backend\AdminController@add');
     Route::any('Admin/showList','Backend\AdminController@showList');
-    Route::any('Admin/Admin/del','Backend\AdminController@del');
-    Route::any('Admin/Admin/upd','Backend\AdminController@upd');
+    Route::any('Admin/del','Backend\AdminController@del');
+    Route::any('Admin/upd','Backend\AdminController@upd');
 
     Route::any('Role/showList','Backend\RoleController@showList');
     Route::any('Role/add','Backend\RoleController@add');
-    Route::any('Role/Role/del','Backend\RoleController@del');
-    Route::any('Role/Role/upd','Backend\RoleController@upd');
+    Route::any('Role/del','Backend\RoleController@del');
+    Route::any('Role/upd','Backend\RoleController@upd');
     Route::any('Role/roleName','Backend\RoleController@roleName');
 
     Route::any('Power/showList','Backend\MenuController@showList');
     Route::any('Power/add','Backend\MenuController@add');
-    Route::any('Power/Menu/del','Backend\MenuController@del');
-    Route::any('Power/Menu/upd','Backend\MenuController@upd');
+    Route::any('Power/del','Backend\MenuController@del');
+    Route::any('Power/upd','Backend\MenuController@upd');
     Route::any('Power/menuName','Backend\MenuController@menuName');
     Route::any('Power/menuUrl','Backend\MenuController@menuUrl');
+
+    Route::any('Goods/add','Backend\GoodsController@add');
 });
 //Route::any('Admin/upd','Backend\AdminController@upd');
 Auth::routes();

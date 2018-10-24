@@ -26,6 +26,7 @@ class PowerMiddleware
         }
 
         // 判断是否有路由访问权限
+
         if (!$homeService->power($request->path())) {
             return redirect('/backend/home');
         }
