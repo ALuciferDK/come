@@ -30,7 +30,16 @@ class FirstController extends Controller
             $data = serialize($data);
             Redis::set('list',$data);
         }
-        return view('frontend.first.details',['data'=>$data]);
+        $goodsData = $FirstService->getGoods();
+        if($goodsData)
+        {
+            return view('frontend.first.details',['data'=>$data,'goodsData'=>$goodsData]);
+        }
+        else
+        {
+            return view('frontend.first.details',['data'=>$data]);
+        }
+
     }
 }
 ?>

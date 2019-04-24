@@ -4,7 +4,7 @@
     <h1>管理员管理</h1>
     <ol class="breadcrumb">
         <li>
-            <a href="#"><i class="fa fa-dashboard"></i>
+            <a href="/backend/home"><i class="fa fa-dashboard"></i>
                 <font style="vertical-align: inherit;">
                     <font style="vertical-align: inherit;">后台管理</font></font>
             </a>
@@ -81,10 +81,10 @@
                     </td>
                     <td>{{$value->a_login_time}}</td>
                     @if($value->a_is_super == 1)
-                        <td></td>
+                        <td><a href="#" class="label label-danger">不可操作</a></td>
                     @else
                         @if(!Session::get('button'))
-                            <td></td>
+                            <td><a href="#" class="label label-danger">不可操作</a></td>
                         @else
                             @foreach(Session::get('button') as $but => $b_value)
                                 <td>

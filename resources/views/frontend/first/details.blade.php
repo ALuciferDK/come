@@ -79,17 +79,20 @@
 
 	<!-- start danpin -->
 		<div class="danpin center">
-			
 			<div class="biaoti center">小米明星单品</div>
-			<div class="main center">
-				<div class="mingxing fl">
-					<div class="sub_mingxing"><a href=""><img src="/frontend/image/pinpai1.png" alt=""></a></div>
-					<div class="pinpai"><a href="">小米MIX</a></div>
-					<div class="youhui">5月9日-21日享花呗12期分期免息</div>
-					<div class="jiage">3499元起</div>
-				</div>
-				<div class="clear"></div>
-			</div>
+				@foreach($goodsData as $key => $value)
+					@if($value['g_start'] == 1)
+						<div class="main center">
+						<div class="mingxing fl">
+							<div class="sub_mingxing"><a href=""><img src="/img/{{$value['g_img']}}" alt=""></a></div>
+							<div class="pinpai"><a href="">{{$value['g_name']}}</a></div>
+							<div class="youhui">5月9日-21日享花呗12期分期免息</div>
+							<div class="jiage">{{$value['g_price']}}</div>
+						</div>
+						<div class="clear"></div>
+						</div>
+					@endif
+				@endforeach
 		</div>
 		<div class="peijian w">
 			<div class="biaoti center">配件</div>

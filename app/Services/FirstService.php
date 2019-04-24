@@ -17,6 +17,7 @@ class FirstService
      */
     public $goodsModel;
     public $goodsTypeModel;
+    public $goods;
 
     /*
      *      构造函数
@@ -25,12 +26,26 @@ class FirstService
     {
         $this->goodsModel = new FirstModel('goods');//实例化model类,指定goods表。
         $this->goodsTypeModel = new FirstModel('goods_type');//实例化model类,指定goods_type表。
+        $this->goods = new FirstModel('goods');//实例化model类,指定goods表。
     }
 
     public function getAllGoodsType()
     {
         $data = $this->goodsTypeModel->getAll();
         return $data;
+    }
+
+    public function getGoods()
+    {
+        $data = $this->goods->getAll();
+        if($data)
+        {
+            return $data = json_decode($data,true);
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }

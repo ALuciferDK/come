@@ -1,5 +1,25 @@
 @extends('adminlte::page')
 @section('title', '小米商城后台管理')
+@section('content_header')
+    <h1>角色管理</h1>
+    <ol class="breadcrumb">
+        <li>
+            <a href="/backend/home"><i class="fa fa-dashboard"></i>
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">后台管理</font></font>
+            </a>
+        </li>
+        <li>
+            <a href="#"><font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">角色管理</font></font>
+            </a>
+            <>
+        <li class="active">
+            <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">角色修改</font></font>
+        </li>
+    </ol>
+@stop
 @section('content')
     <form action="{{URL::asset('Role/Role/upd')}}" method="post">
         @csrf

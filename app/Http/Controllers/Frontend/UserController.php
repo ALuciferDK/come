@@ -107,48 +107,6 @@ class UserController extends Controller
                 {
                     return redirect('/message')->with(['message'=>'注册失败!','url' =>'/frontend/user/register', 'jumpTime'=>3,'status'=>false]);//返回错误并跳转到前台
                 }
-                /*$rules = [
-                    'captcha' => 'required|captcha',
-                    'tel' => [
-                        'required',
-                        'regex:/^(1[3578]\d{9}$/'
-                    ],
-                    'password' => 'required|between:6,12|confirmed',
-                    'repassword_confirmation' => 'required',
-                    'username'=>'required'
-                ];
-                $messages = [
-                    'captcha.required' => '请输入验证码',
-                    'captcha.captcha' => '验证码错误，请重试',
-                    'tel.required' => '请输入手机号',
-                    'tel.regex' => '请输入正确手机号',
-                    'password.required' => '密码不得为空',
-                    'password.between' => '密码请输入6位以上12位以下字符',
-                    'password.confirmed' => '两次密码不一致',
-                    'repassword_confirmation.required' => '确认密码不得为空',
-                ];
-                $validator = Validator::make($data, $rules,$messages);
-                if ($validator->fails()){
-                    $errors = $validator->errors();
-                    if ($errors->has('captcha')) {
-                        return $errors->first('captcha');
-                    }
-                    if (isset($arr['tel'])&&$errors->has('tel')) {
-                        $data['u_tel']=$arr['tel'];
-                        return $errors->first('tel');
-                    }
-                    if (isset($arr['mail'])&&$errors->has('mail')) {
-                        $data['u_mail']=$arr['mail'];
-                        return $errors->first('mail');
-                    }
-                    if ($errors->has('password')) {
-                        return $errors->first('password');
-                    }
-                    if ($errors->has('repassword_confirmation')) {
-                        return $errors->first('repassword_confirmation');
-                    }
-                    return '出错了！';
-                }*/
             }
             else if($info == 'email')//如果是电话号码注册，走电话号码注册service类里面的电话号码注册方法
             {
@@ -161,7 +119,7 @@ class UserController extends Controller
                 ]);
                 //var_dump($data);die;
                 $userService = new UserService();//实例化类
-                $result = $userService->saveRegisterEmail($data);//调用里面的电话注册方法
+                $result = $userService->saveRegisterEmail($data);//调用里面的邮箱注册方法
                 //var_dump($result);die;
                 if($result)//判断返回值
                 {

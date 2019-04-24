@@ -6,7 +6,7 @@
     <h1>角色管理</h1>
     <ol class="breadcrumb">
         <li>
-            <a href="#"><i class="fa fa-dashboard"></i>
+            <a href="/backend/home"><i class="fa fa-dashboard"></i>
                 <font style="vertical-align: inherit;">
                     <font style="vertical-align: inherit;">后台管理</font></font>
             </a>

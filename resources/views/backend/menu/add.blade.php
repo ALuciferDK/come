@@ -6,6 +6,27 @@
     <h1>权限管理</h1>
     <ol class="breadcrumb">
         <li>
+            <a href="/backend/home"><i class="fa fa-dashboard"></i>
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">后台管理</font></font>
+            </a>
+        </li>
+        <li>
+            <a href="#"><font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">权限管理</font></font>
+            </a>
+            <>
+        <li class="active">
+            <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">权限添加</font></font>
+        </li>
+    </ol>
+@stop
+
+@section('content_header')
+    <h1>权限管理</h1>
+    <ol class="breadcrumb">
+        <li>
             <a href="#"><i class="fa fa-dashboard"></i>
                 <font style="vertical-align: inherit;">
                     <font style="vertical-align: inherit;">后台管理</font></font>
@@ -126,7 +147,7 @@
                 var url = $(this).val();
                 regular = /^[A-Za-z]{2,20}\/[A-Za-z]{2,20}$/;
                 if (url == '') {
-                    $('#url_info').text('菜单不能为空').css('color','red');$('#url').css('border-color','red');
+                    $('#url_info').text('URL不能为空').css('color','red');$('#url').css('border-color','red');
                     checkMenuname = false;
                 }else if (regular.test(url)) {
                     $('#url_info').text("URL验证成功").css('color','green');$('#url').css('border-color','green');

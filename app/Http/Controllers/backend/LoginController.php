@@ -65,4 +65,19 @@ class LoginController extends Controller
 
     }
 
+    /*public function home()
+    {
+        //dd(Session::get('user_info'));
+        if($user_info = Session::get('user_info'))
+        {
+            return  view('backend.home.home') ;
+        }
+        else
+        {
+            return redirect('/message')->
+            with(['message'=>'请先登录!','url' =>'/backend/login', 'jumpTime'=>3,'status'=>false]);
+        }
+
+    }*/
+
 }
