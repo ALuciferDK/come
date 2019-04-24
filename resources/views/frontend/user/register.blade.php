@@ -81,13 +81,13 @@
             }
             else if(reg.test(u_name))
             {
-                $('#n_info').text('用户名不能使用汉字').css('color','red');$('#u_name').css('border-color','red');
-                flag = false;
+                $('#n_info').text('用户名可用').css('color','green');$('#u_name').css('border-color','green');
+                flag = true;
             }
             else
             {
-                $('#n_info').text('用户名可用').css('color','green');$('#u_name').css('border-color','green');
-                flag = true;
+                $('#n_info').text('用户名不能使用汉字').css('color','red');$('#u_name').css('border-color','red');
+                flag = false;
             }
 
         });

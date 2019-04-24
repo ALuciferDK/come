@@ -4,7 +4,7 @@
     <h1>管理员管理</h1>
     <ol class="breadcrumb">
         <li>
-            <a href="#"><i class="fa fa-dashboard"></i>
+            <a href="/backend/home"><i class="fa fa-dashboard"></i>
                 <font style="vertical-align: inherit;">
                     <font style="vertical-align: inherit;">后台管理</font></font>
             </a>
@@ -50,11 +50,12 @@
                 <tr align="center">
                     <td><input type="checkbox" name=""></td>
                     <td>{{$value->role_name}}</td>
-                    @if(!Session::get('button'))
-                        <td></td>
-                    @else
-                        @foreach(Session::get('button') as $but => $b_value)
-                            <td>
+                    <td>
+                        @if(!Session::get('button'))
+                            <td><a href="#" class="label label-danger">不可操作</a></td>
+                        @else
+                            @foreach(Session::get('button') as $but => $b_value)
+
                                 @if($b_value['url'] == 'Role/del')
                                     <a href="/Role/del?m_id={{$value->role_id}}" class="label label-success">删除</a>
                                 @elseif($b_value['url'] == 'Role/upd')
@@ -62,9 +63,11 @@
                                 @else
 
                                 @endif
-                            </td>
-                                @endforeach
-                    @endif
+
+                            @endforeach
+                        @endif
+                    </td>
+
                 </tr>
             @endforeach
             {{ $roleData->links() }}
